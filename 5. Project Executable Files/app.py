@@ -97,7 +97,7 @@ def response():
     return render_template('response.html',T=dt,S=float_value)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')
 
 
 '''

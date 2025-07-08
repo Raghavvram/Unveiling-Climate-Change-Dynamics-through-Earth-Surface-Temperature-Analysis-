@@ -83,6 +83,30 @@ python app.py
 
 This will start the Flask development server, usually on `http://127.0.0.1:5000/`.
 
+## Dockerization
+
+This application can be easily containerized using Docker. A `Dockerfile` is provided to build a Docker image for the Flask application.
+
+### Build the Docker Image
+
+To build the Docker image, navigate to the root directory of the project (where the `Dockerfile` is located) and run the following command:
+
+```bash
+docker build -t flask-temperature-app .
+```
+
+This command builds a Docker image named `flask-temperature-app` using the `Dockerfile` in the current directory.
+
+### Run the Docker Container
+
+After building the image, you can run the application in a Docker container using the following command:
+
+```bash
+docker run -p 5000:5000 flask-temperature-app
+```
+
+This command runs the `flask-temperature-app` image and maps port 5000 of your host machine to port 5000 inside the container, allowing you to access the application in your browser at `http://localhost:5000`.
+
 ## Usage
 
 1.  **Access the Application**: Open your web browser and navigate to `http://127.0.0.1:5000/`.
