@@ -17,15 +17,16 @@ def home():
     return render_template('index.html')
 
 
-def _predict_temperature(form_data):
+@app.route('/response', methods=['Post'])
+def response():
     dt = '2016-01-01'
-    LandAverageTemperatureUncertainty = float(form_data["LandAverageTemperatureUncertainty"])
-    LandMaxTemperature = float(form_data["LandMaxTemperature"])
-    LandMaxTemperatureUncertainty = float(form_data["LandMaxTemperatureUncertainty"])
-    LandMinTemperature = float(form_data["LandMinTemperature"])
-    LandMinTemperatureUncertainty = float(form_data["LandMinTemperatureUncertainty"])
-    LandAndOceanAverageTemperature = float(form_data["LandAndOceanAverageTemperature"])
-    LandAndOceanAverageTemperatureUncertainty = float(form_data["LandAndOceanAverageTemperatureUncertainty"])
+    LandAverageTemperatureUncertainty = float(request.form["LandAverageTemperatureUncertainty"])
+    LandMaxTemperature = float(request.form["LandMaxTemperature"])
+    LandMaxTemperatureUncertainty = float(request.form["LandMaxTemperatureUncertainty"])
+    LandMinTemperature = float(request.form["LandMinTemperature"])
+    LandMinTemperatureUncertainty = float(request.form["LandMinTemperatureUncertainty"])
+    LandAndOceanAverageTemperature = float(request.form["LandAndOceanAverageTemperature"])
+    LandAndOceanAverageTemperatureUncertainty = float(request.form["LandAndOceanAverageTemperatureUncertainty"])
 
     print("\n")
     print(f"dt: {dt}, type: {type(dt)}")
@@ -89,11 +90,8 @@ def _predict_temperature(form_data):
     print("Inverse transformed prediction:", prediction_inverse[0][0])
 
     float_value = prediction_inverse[0][0]
-    return dt, float_value
 
-@app.route('/response', methods=['Post'])
-def response():
-    dt, float_value = _predict_temperature(request.form)
+
     return render_template('response.html',T=dt,S=float_value)
 
 if __name__ == '__main__':

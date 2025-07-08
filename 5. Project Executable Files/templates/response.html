@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="color-scheme" content="light dark" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>Prediction Result</title>
+        <style>
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            .fade-in {
+                animation: fadeIn 0.8s ease-out forwards;
+            }
+            .fancy-text {
+                font-size: 2.5rem; /* Larger font size */
+                font-weight: 800; /* Extra bold */
+                color: #6366f1; /* Indigo 500 */
+                text-shadow: 0 0 10px rgba(99, 102, 241, 0.5); /* Subtle glow */
+                display: block; /* Ensure it takes full width */
+                margin-top: 0.5rem; /* Space from label */
+            }
+            .dark .fancy-text {
+                color: #818cf8; /* Indigo 400 for dark mode */
+                text-shadow: 0 0 10px rgba(129, 140, 248, 0.5); /* Subtle glow for dark mode */
+            }
+        </style>
+    </head>
+
+    <body class="bg-gradient-to-br from-gray-50 to-gray-200 dark:from-gray-900 dark:to-gray-700 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8">
+        <div class="w-full max-w-md mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-8 sm:p-10 lg:p-12 space-y-8 text-center fade-in transform transition-all duration-500 hover:scale-105">
+            <h2 class="text-4xl font-extrabold text-indigo-700 dark:text-indigo-400 mb-4">Prediction Complete!</h2>
+            <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">Here are your results:</p>
+            <div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-6 shadow-inner space-y-6">
+                <p class="text-xl font-semibold text-gray-800 dark:text-gray-100">Date:
+                    <span class="fancy-text">{{T}}</span>
+                </p>
+                <p class="text-xl font-semibold text-gray-800 dark:text-gray-100">Predicted Temperature:
+                    <span class="fancy-text">{{S}}</span>
+                </p>
+            </div>
+            <a href="/" class="inline-flex items-center justify-center py-3 px-8 border border-transparent rounded-full shadow-lg text-lg font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-300 ease-in-out transform hover:-translate-y-1">
+                <svg class="-ml-1 mr-3 h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path></svg>
+                Go Back
+            </a>
+        </div>
+    </body>
+</html>

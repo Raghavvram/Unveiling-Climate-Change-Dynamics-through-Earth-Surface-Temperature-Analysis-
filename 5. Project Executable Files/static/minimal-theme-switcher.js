@@ -11,8 +11,8 @@ const themeSwitcher = {
     menuTarget: "details.dropdown",
     buttonsTarget: "a[data-theme-switcher]",
     buttonAttribute: "data-theme-switcher",
-    rootAttribute: "data-theme",
-    localStorageKey: "picoPreferredColorScheme",
+    rootAttribute: "class",
+    localStorageKey: "preferredColorScheme",
     // Init
     init() {
         this.scheme = this.schemeFromLocalStorage;
@@ -59,7 +59,14 @@ const themeSwitcher = {
     },
     // Apply scheme
     applyScheme() {
-        document.querySelector("html")?.setAttribute(this.rootAttribute, this.scheme);
+        const htmlElement = document.querySelector("html");
+        if (htmlElement) {
+            if (this._scheme === "dark") {
+                htmlElement.classList.add("dark");
+            } else { // this._scheme must be "light"
+                htmlElement.classList.remove("dark");
+            }
+        }
     },
     // Store scheme to local storage
     schemeToLocalStorage() {
