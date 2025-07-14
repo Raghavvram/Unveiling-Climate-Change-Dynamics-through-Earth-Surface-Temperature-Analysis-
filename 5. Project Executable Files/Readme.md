@@ -2,6 +2,8 @@
 
 This Flask web application allows users to predict Earth's surface temperature based on various input parameters. It utilizes a pre-trained machine learning model (`best_model.keras`) and scalers (`scaler_x.pkl`, `scaler_y.pkl`) to make predictions.
 
+![Image](https://raw.githubusercontent.com/Raghavvram/Unveiling-Climate-Change-Dynamics-through-Earth-Surface-Temperature-Analysis-/refs/heads/main/5.%20Project%20Executable%20Files/static/unveling.png)
+
 ## Functionality
 
 The application provides a simple web interface where users can input several temperature-related values. Upon submission, the application processes these inputs, scales them using pre-trained scalers, feeds them into a deep learning model (Keras), and then displays the predicted Land Average Temperature.
