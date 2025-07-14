@@ -104,14 +104,17 @@ This command builds a Docker image named `flask-temperature-app` using the `Dock
 After building the image, you can run the application in a Docker container using the following command:
 
 ```bash
-docker run -p 5000:5000 flask-temperature-app
+docker pull raghavvram/temp-predict-web-app
+
+docker run --name Flask-Web-App -p 9595:5000 raghavvram/temp-predict-web-app
+
 ```
 
-This command runs the `flask-temperature-app` image and maps port 5000 of your host machine to port 5000 inside the container, allowing you to access the application in your browser at `http://localhost:5000`.
+This command runs the `flask-web-app` image and maps port 9595 of your host machine to port 5000 inside the container, allowing you to access the application in your browser at `http://localhost:9595`.
 
 ## Usage
 
-1.  **Access the Application**: Open your web browser and navigate to `http://127.0.0.1:5000/`.
+1.  **Access the Application**: Open your web browser and navigate to `http://127.0.0.1:9595`.
 2.  **Input Data**: On the `index.html` page, fill in all the required numerical fields for the temperature parameters.
 3.  **Submit**: Click the "Submit for Prediction" button.
 4.  **View Results**: You will be redirected to the `response.html` page, which will display the predicted Land Average Temperature based on your inputs.
