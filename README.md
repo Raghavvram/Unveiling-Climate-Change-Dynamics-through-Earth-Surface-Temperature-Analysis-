@@ -23,3 +23,10 @@ The project is structured into several key phases, documented in their respectiv
 *   **Raw Data Source:** https://berkeleyearth.org/data/
 
 This project aims to provide insights into climate change by analyzing historical temperature data and offering a practical application for interacting with the trained models.
+
+## Authors
+
+- OZA ASHWIN
+- RUTHWIK SAI
+- ANUSHA T
+- RAGHAVVRAM J
